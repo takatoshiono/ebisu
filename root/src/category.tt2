@@ -1,0 +1,23 @@
+[% title = category.name -%]
+
+<div id="bread-clumbs">
+<a href="[% Catalyst.uri_for('/') %]">TOP</a> &gt; Catagory: [% category.name | html %]
+</div>
+
+<div id="container">
+    <div id="sidebar">
+        <h3>カテゴリ一覧</h3>
+        [% WHILE (categ = category_rs.next) %]
+        <p><a href="[% Catalyst.uri_for('/category', categ.id) %]">[% categ.name | html %]</a></p>
+        [% END %]
+    </div>
+    <div id="main">
+        <h3>[% category.name | html %]</h3>
+        <div class="threads">
+            [% WHILE (thread = thread_rs.next) %]
+            <a href="[% Catalyst.uri_for('/thread', thread.id) %]">[% thread.id %]: [% thread.title | html %]([% thread.entries_rs.count %])</a> | 
+            [% END %]
+        </div>
+        <p><a href="[% Catalyst.uri_for('/create_thread', {category_id => category.id}) %]">スレッドを作成する</a></p>
+    </div>
+</div>

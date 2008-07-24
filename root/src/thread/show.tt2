@@ -1,0 +1,50 @@
+[% title = thread.title -%]
+[% META action_for_message = 'create_entry' -%]
+
+<div id="bread-clumbs">
+<a href="[% Catalyst.uri_for('/') %]">TOP</a> &gt; Category: <a href="[% Catalyst.uri_for('/category', thread.category_id) %]">[% thread.category.name | html %]</a> &gt; Thread: [% thread.title | html %]
+</div>
+
+<h3>[% thread.description | html %]</h3>
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-7223417079838154";
+google_ad_width = 728;
+google_ad_height = 15;
+google_ad_format = "728x15_0ads_al_s";
+google_ad_channel = "";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+[% FOREACH entry = thread.entries %]
+<hr />
+[% entry.id %]:
+[% IF entry.email -%]
+    <a href="mailto:[% entry.email %]">[% entry.name | html %]</a>
+[% ELSE %]
+    [% entry.name || '名無しさん' | html %]
+[% END %]
+[% IF entry.trip -%]&diams;[% entry.trip %][% END %]
+: [% entry.created_at %]
+ID: [% entry.clientid %]
+<br />
+[% entry.body | html %]
+[% END %]
+
+<hr />
+
+<form action="[% Catalyst.uri_for('create_entry') %]" method="post">
+    <input type="hidden" name="thread_id" value="[% thread.id %]" />
+    <label for="name">名前: </label>
+    <input type="text" name="name" size="20" />
+    <label for="email">E-mail: </label>
+    <input type="text" name="email" size="20" />
+    <br />
+    <textarea name="body" cols="60" rows="5"></textarea>
+    <br />
+    <input type="submit" name="submit" value="書き込む" />
+</form>
+

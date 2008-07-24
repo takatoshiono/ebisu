@@ -1,0 +1,38 @@
+<div id="header">[% PROCESS site/header %]</div>
+
+[% IF Catalyst.flash.notice %]
+<div id="error">
+<ul><li><span class="error">[% Catalyst.flash.notice | html %]</span></li></ul>
+</div>
+[% END %]
+
+[% IF Catalyst.form.has_error %]
+<div id="error">
+    <ul>
+    [% FOREACH message IN Catalyst.form.messages(template.action_for_message) %]
+        <li>[% message %]</li>
+    [% END %]
+    </ul>
+</div>
+[% END %]
+
+<div id="content">
+[% content %]
+</div>
+
+<div class="ads">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7223417079838154";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text_image";
+google_ad_channel = "";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+<div id="footer">[% PROCESS site/footer %]</div>

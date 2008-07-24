@@ -1,0 +1,28 @@
+---
+dispatchers:
+  - filerotate
+  - screen
+
+file:
+  class: Log::Dispatch::File
+  min_level: debug
+  filename: ./logs/ebisu.log
+  mode: append
+  format: '[%d] [%p] %m at %F line %L%n'
+
+screen:
+  class: Log::Dispatch::Screen
+  min_level: debug
+  stderr: 1
+  format: '[%p] %m%n'
+
+filerotate:
+  class: Log::Dispatch::FileRotate
+  min_level: debug
+  filename: ./logs/ebisu.log
+  mode: append
+  format: '[%d] [%p] %m at %F line %L%n'
+  max: 31
+  TZ: JST
+  DatePattern: yyyy-mm-dd
+

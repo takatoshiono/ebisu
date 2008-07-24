@@ -1,0 +1,25 @@
+create_category:
+  id:
+    NOT_EXIST: カテゴリが存在しません。
+  name:
+    NOT_BLANK: カテゴリ名を入力してください。
+    JLENGTH: カテゴリ名は200文字以内で入力してください。
+    DBIC_UNIQUE: カテゴリがすでに存在します。
+  unique:
+    DBIC_UNIQUE: そのカテゴリ名はすでに存在します。
+create_thread:
+  title:
+    NOT_BLANK: タイトルを入力してください。
+    JLENGTH: タイトルは200文字以内で入力してください。
+  description:
+    NOT_BLANK: 説明文を入力してください。
+    JLENGTH: 説明文は400文字以内で入力してください。
+create_entry:
+  name:
+    JLENGTH: 名前は32文字以内で入力してください。
+  email:
+    JLENGTH: E-mailは200文字以内で入力してください。
+  body:
+    NOT_BLANK: 本文を入力してください。
+    JLENGTH: 本文は4000文字以内で入力してください。
+

@@ -1,0 +1,117 @@
+html {
+    height: 100%;
+}
+
+body { 
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    font-size: 12px;
+    font-family: Verdana, Arial, sans-serif;
+}
+
+#header {
+    background-image: url(../images/tartan_9659d7abd09d85b154e8ff3b4a9aa7de.png);
+    background-repeat: repeat-x;
+    color: #fff;
+}
+
+#footer {
+    clear: both;
+    text-align: center;
+    border-top: 1px solid #eee;
+    width: 90%;
+    padding: 4px;
+}
+
+#content {
+    width: 100%;
+    padding: 0px 10px;
+}
+
+h1.title {
+    padding: 10px;
+    margin: 0px;
+}
+
+h3 {
+    background-image: url(../images/slash.png);
+    background-repeat: repeat-x repeat-y;
+    width: 90%;
+    height: 20px;
+    padding: 5px;
+}
+
+a:link, a:visited, a:hover {
+    color: #0a5e93;
+}
+
+#menu {
+    padding: 0px 5px 5px 5px;
+    text-align: right;
+}
+
+#bread-clumbs {
+    margin: 5px 0px;
+}
+
+form#edit_post {
+    margin: 10px;
+    width: 500px;
+}
+
+form#edit_post label {
+    font: Bold 16px Georgia, serif;
+    color: #666;
+}
+
+form#edit_post input.text_input {
+    width: 100%;
+    font-size: 30px;
+}
+
+form#edit_post textarea {
+    width: 100%;
+    height: 100px;
+}
+
+.message {
+    color: #f00;
+}
+
+.error {
+    color: #f00;
+}
+
+#sidebar {
+    float: left;
+    width: 200px;
+    padding: 5px;
+}
+
+#main {
+    float: left;
+    padding: 5px;
+}
+
+table.list {
+    border-collapse: collapse;
+    border-spacing: 0px;
+    font-size: 12px;
+    margin: 5px;
+}
+
+table.list thead {
+    background-color: #fff6d5;
+}
+
+table.list td {
+    border: 1px solid #ccc;
+    padding: .1em .25em;
+}
+
+div.ads {
+    clear: both;
+    text-align: center;
+}
+

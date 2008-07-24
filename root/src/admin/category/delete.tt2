@@ -1,0 +1,13 @@
+[% META title = 'カテゴリの削除' %]
+
+<div>
+    <p>カテゴリ「[% category.name %]」を削除しますか？</p>
+    <p>
+        <form action="[% Catalyst.uri_for('/admin/category/delete') %]/[% category.id %]" method="post">
+            <input type="submit" name="submit" value="削除する" />
+        </form>
+    </p>
+</div>
+
+<p><a href="[% Catalyst.uri_for('/admin/category/list') %]">戻る</a></p>
+

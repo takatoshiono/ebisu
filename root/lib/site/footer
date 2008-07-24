@@ -1,0 +1,9 @@
+<!-- BEGIN site/footer -->
+<div id="copyright">&copy; [% site.copyright %]</div>
+<div id="powered">
+Powered by
+<a href="http://www.catalystframework.org/">Catalyst</a>
+and <a href="http://lab.rails2u.com/bgmaker/">Background Image Maker</a>
+and <a href="http://www.tartanmaker.com/">Tartan Maker</a>
+</div>
+<!-- END site/footer -->

@@ -1,0 +1,10 @@
+name: category_create
+method: post
+fields:
+    name:
+        label: カテゴリ名
+        type: text
+        size: 40
+        required: 1
+submit: 作成
+

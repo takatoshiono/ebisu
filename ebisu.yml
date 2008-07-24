@@ -1,0 +1,25 @@
+---
+name: Ebisu
+validator:
+  plugins:
+    - Japanese
+    - DBIC::Unique
+  charset: utf8
+  messages: messages.yml
+  message_format: <span class="error">%s</error>
+authentication:
+  default_realm: members
+  realms:
+    members:
+        credential:
+            class: Password
+            password_field: password
+            password_type: hashed
+            password_hash_type: SHA-1
+        store:
+            class: DBIx::Class
+            user_class: DBIC::User
+            id_field: id
+            role_relation: roles
+            role_field: rolename
+

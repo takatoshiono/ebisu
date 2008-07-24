@@ -1,0 +1,30 @@
+[% META title = 'カテゴリ一覧' -%]
+
+<div id="bread-clumbs">
+<a href="[% Catalyst.uri_for('/') %]">TOP</a> &gt; <a href="[% Catalyst.uri_for('/admin') %]">管理画面</a> &gt; カテゴリ管理
+</div>
+
+<table class="list">
+<thead>
+<tr>
+    <td>カテゴリ名</td>
+    <td>更新日時</td>
+    <td>作成日時</td>
+    <td colspan="2"></td>
+</tr>
+</thead>
+<tbody>
+[% WHILE (category = category_rs.next) %]
+<tr>
+    <td>[% category.name | html %]</td>
+    <td>[% category.updated_at %]</td>
+    <td>[% category.created_at %]</td>
+    <td><a href="[% Catalyst.uri_for('/admin/category/edit') %]/[% category.id %]">編集</a></td>
+    <td><a href="[% Catalyst.uri_for('/admin/category/delete', category.id) %]">削除</a></td>
+</tr>
+[% END %]
+</tbody>
+</table>
+
+<p><a href="[% Catalyst.uri_for('/admin/category/create') %]">新規作成</a></p>
+

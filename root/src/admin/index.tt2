@@ -1,0 +1,12 @@
+[% title = '管理画面' %]
+
+<div id="bread-clumbs">
+<a href="[% Catalyst.uri_for('/') %]">TOP</a> &gt; 管理画面
+</div>
+
+<div style="margin: 10px">
+<ul>
+    <li><a href="[% Catalyst.uri_for('/admin/category') %]">カテゴリ管理</a></li>
+</ul>
+</div>
+

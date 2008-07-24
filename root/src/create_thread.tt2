@@ -1,0 +1,20 @@
+[% META title = 'スレッドの作成' %]
+[% META action_for_message = 'create_thread' %]
+
+<div id="bread-clumbs">
+<a href="[% Catalyst.uri_for('/') %]">TOP</a> &gt;
+Category: <a href="[% Catalyst.uri_for('/category', category.id) %]">[% category.name | html %]</a> &gt;
+スレッドの作成
+</div>
+
+<form id="edit_post" action="[% Catalyst.uri_for('create_thread') %]" method="post">
+    <input type="hidden" name="category_id" value="[% category.id %]" />
+    <label for="title">タイトル</label><br />
+    <input class="text_input" type="text" name="title" value="[% Catalyst.req.param('title') %]" /><br />
+    <br />
+    <label for="description">スレッドの説明</label><br />
+    <textarea name="description">[% Catalyst.req.param('description') %]</textarea><br />
+    <br />
+    <input type="submit" name="confirm" value="確認" /><br />
+</form>
+

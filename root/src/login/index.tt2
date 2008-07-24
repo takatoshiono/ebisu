@@ -1,0 +1,11 @@
+[% title = 'ログイン' %]
+
+<form id="edit_post" action="[% Catalyst.uri_for('/login') %]" method="post">
+    <label for="username">ユーザー名</label><br />
+    <input class="text_input" type="text" name="username" /><br />
+    <br />
+    <label for="password">パスワード</label><br />
+    <input class="text_input" type="password" name="password" /><br />
+    <br />
+    <input type="submit" name="submit" value="ログイン" />
+</form>

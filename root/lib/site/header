@@ -1,0 +1,12 @@
+<!-- BEGIN site/header -->
+<h1 class="title">[% title or template.title or site.title | html %]</h1>
+<div id="menu">
+[% IF Catalyst.user_exists %]
+Hello, [% Catalyst.user.get('username') %] さん | 
+<a href="[% Catalyst.uri_for('/admin') %]">管理画面</a> |
+<a href="[% Catalyst.uri_for('/logout') %]">Logout</a>
+[% ELSE %]
+<a href="[% Catalyst.uri_for('/login') %]">Login</a>
+[% END %]
+</div>
+<!-- END site/header -->

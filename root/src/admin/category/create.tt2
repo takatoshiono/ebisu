@@ -1,0 +1,16 @@
+[% META title = 'カテゴリの作成' -%]
+[% META action_for_message = 'create_category' %]
+
+<div id="bread-clumbs">
+<a href="[% Catalyst.uri_for('/') %]">TOP</a> &gt;
+<a href="[% Catalyst.uri_for('/admin') %]">管理画面</a> &gt;
+<a href="[% Catalyst.uri_for('/admin/category/list') %]">カテゴリ管理</a> &gt;
+作成
+</div>
+
+<form id="edit_post" action="[% Catalyst.uri_for('/admin/category/create') %]" method="post">
+    <label for="name">カテゴリ名</label><br />
+    <input class="text_input" type="text" name="name" size="40" /><br />
+    <br />
+    <input type="submit" name="submit" value="作成する" />
+</form>
